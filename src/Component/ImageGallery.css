@@ -26,13 +26,6 @@
   top: 5px;
   left: 10px;
   display: block;
-  color: blue; /* Change the color as needed */
-  font-size: 14px; /* Change the font size as needed */
-}
-
-.add-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
+  color: blue;
+  font-size: 14px;
 }
