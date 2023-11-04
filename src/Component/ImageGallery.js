@@ -11,13 +11,13 @@ import image8 from '../Images/image-8.webp';
 import image9 from '../Images/image-9.webp';
 import image10 from '../Images/image-10.jpeg';
 import image11 from '../Images/image-11.jpeg';
-import addimage from '../Images/addimage.png';
+import addimage2 from '../Images/addimage2.png';
 import './ImageGallery.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // import the FontAwesome library
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSquareCheck } from '@fortawesome/free-solid-svg-icons';
 
-const image_box = "w-full rounded border border-gray-300 overflow-hidden bg-fixed opacity-100 transition duration-300 ease-in-out hover:opacity-50";
-const largerImageClass = "w-full col-span-2 row-span-2 rounded border border-gray-300 overflow-hidden bg-fixed opacity-100 transition duration-300 ease-in-out hover:opacity-50";
+const image_box = "w-full rounded border border-2 border-gray-300 overflow-hidden bg-fixed opacity-100 transition duration-300 ease-in-out hover:opacity-50";
+const largerImageClass = "w-full col-span-2 row-span-2 rounded border border-2 border-gray-300 overflow-hidden bg-fixed opacity-100 transition duration-300 ease-in-out hover:opacity-50";
 
 const initialImages = [
     { id: 'image1', src: image1 },
@@ -79,7 +79,7 @@ const ImageGallery = () => {
                                 <>
                                     <input type="checkbox" name="" className="mr-3" checked /> {selectedImages.size} Files selected
                                 </>
-                                : <p>Gallery</p>
+                                : <p className='text-xl font-medium ml-4'>Gallery</p>
                             }
                         </div>
                         <div>
@@ -106,6 +106,12 @@ const ImageGallery = () => {
                                                     className={index === 0 ? largerImageClass : image_box}
                                                 >
                                                     <div className="image-card">
+                                                        <input
+                                                            type="checkbox"
+                                                            checked={selectedImages.has(image.id)}
+                                                            onChange={() => toggleImageSelection(image.id)}
+                                                            className="image-checkbox"
+                                                        />
                                                         <img src={image.src} alt="gallery" className="image-preview" onClick={() => toggleImageSelection(image.id)} />
                                                         {selectedImages.has(image.id) && (
                                                             <div className="checkmark">
@@ -117,6 +123,13 @@ const ImageGallery = () => {
                                             )}
                                         </Draggable>
                                     ))}
+                                    <div className='w-fullrounded border border-gray-300 overflow-hidden bg-fixed'>
+                                        <div className='flex justify-center items-center'>
+                                            <div>
+                                                <img src={addimage2} alt="" className='w-48' />
+                                            </div>
+                                        </div>
+                                    </div>
                                     {provided.placeholder}
                                 </div>
                             )}

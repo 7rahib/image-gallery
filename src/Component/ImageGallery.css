@@ -1,7 +1,7 @@
 .image-card {
   position: relative;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.1s ease;
 }
 
 .image-card:hover .image-checkbox {
@@ -23,9 +23,16 @@
 
 .checkmark {
   position: absolute;
-  top: 10px;
+  top: 5px;
   left: 10px;
   display: block;
   color: blue; /* Change the color as needed */
-  font-size: 24px; /* Change the font size as needed */
+  font-size: 14px; /* Change the font size as needed */
+}
+
+.add-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
 }
