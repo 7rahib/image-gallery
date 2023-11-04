@@ -4,6 +4,7 @@ import {
   Routes,
 } from "react-router-dom";
 import ImageGallery from './Component/ImageGallery';
+import app from './firebase.init';
 
 function App() {
   return (
